@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>424</width>
+    <height>422</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>424</width>
+    <height>422</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Electrical Calcs</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>electricity.png</normaloff>electricity.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QWidget{
+	background-color: rgb(165, 200, 255);
+	color:black;
+}
+QFrame {
+background-color: rgb(241, 255, 235);
+border-radius:10px;
+
+border-style:outset;
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>32</y>
+      <width>203</width>
+      <height>333</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>4</y>
+       <width>185</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Polar --&gt; Retangular</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnPolRect">
+     <property name="geometry">
+      <rect>
+       <x>8</x>
+       <y>274</y>
+       <width>189</width>
+       <height>47</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+border-radius:10px;
+border-color: rgb(0, 0, 0);
+border-width:1px;
+border-style:outset;
+background-color: rgb(0, 170, 255);
+}
+QPushButton:hover{
+	border-radius:10px;
+	border-color: rgb(0, 0, 0);
+	border-width:1px;
+	border-style:outset;
+	background-color: rgb(85, 255, 127);
+}
+QPushButton:pressed{
+	border-radius:10px;
+	border-color: rgb(0, 0, 0);
+	border-width:1px;
+	border-style:outset;
+	
+	background-color: rgb(0, 255, 0);
+	
+}</string>
+     </property>
+     <property name="text">
+      <string>Converter</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>convert.png</normaloff>convert.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>130</y>
+       <width>185</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Ângulo de Fase</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Mod">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>92</y>
+       <width>185</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10px;
+border-style:outset;
+border-color:black;
+border-width:1px;
+</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Resp1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>230</y>
+       <width>185</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10px;
+border-style:outset;
+border-color:black;
+border-width:1px;
+</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Angle">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>185</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10px;
+border-style:outset;
+border-color:black;
+border-width:1px;
+</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>204</y>
+       <width>185</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Resposta :</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>72</y>
+       <width>185</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Módulo</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>216</x>
+      <y>32</y>
+      <width>203</width>
+      <height>333</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>4</y>
+       <width>185</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string> Retangular --&gt; Polar</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnRectPol">
+     <property name="geometry">
+      <rect>
+       <x>8</x>
+       <y>274</y>
+       <width>189</width>
+       <height>47</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+border-radius:10px;
+border-color: rgb(0, 0, 0);
+border-width:1px;
+border-style:outset;
+background-color: rgb(0, 170, 255);
+}
+QPushButton:hover{
+	border-radius:10px;
+	border-color: rgb(0, 0, 0);
+	border-width:1px;
+	border-style:outset;
+	background-color: rgb(85, 255, 127);
+}
+QPushButton:pressed{
+	border-radius:10px;
+	border-color: rgb(0, 0, 0);
+	border-width:1px;
+	border-style:outset;
+	
+	background-color: rgb(0, 255, 0);
+	
+}</string>
+     </property>
+     <property name="text">
+      <string>Converter</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>convert.png</normaloff>convert.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>130</y>
+       <width>185</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Parte Imaginária</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>72</y>
+       <width>185</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Parte Real</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="real">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>92</y>
+       <width>185</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10px;
+border-style:outset;
+border-color:black;
+border-width:1px;
+</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Resp2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>230</y>
+       <width>185</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10px;
+border-style:outset;
+border-color:black;
+border-width:1px;
+</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="img">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>185</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10px;
+border-style:outset;
+border-color:black;
+border-width:1px;
+</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>204</y>
+       <width>185</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Resposta :</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="status">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>372</y>
+      <width>415</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 250, 210);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>400</y>
+      <width>411</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(165, 200, 255);
+</string>
+    </property>
+    <property name="text">
+     <string>Eng. Thiago dos Santos Alves - V1.0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>6</y>
+      <width>411</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(165, 200, 255);
+</string>
+    </property>
+    <property name="text">
+     <string>Conversor Para Números Complexos</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <action name="actionPolar_Retangular">
+   <property name="text">
+    <string>Polar -&gt; Retangular</string>
+   </property>
+  </action>
+  <action name="actionRetangular_Polar">
+   <property name="text">
+    <string>Retangular -&gt; Polar</string>
+   </property>
+  </action>
+  <action name="actionXL_Indut_ncia">
+   <property name="text">
+    <string>XL -&gt; Indutância</string>
+   </property>
+  </action>
+  <action name="actionIndutancia_XL">
+   <property name="text">
+    <string>Indutancia -&gt; XL</string>
+   </property>
+  </action>
+  <action name="actionXC_Capacit_ncia">
+   <property name="text">
+    <string>XC-&gt;Capacitância</string>
+   </property>
+  </action>
+  <action name="actionCapacit_ncia_XC">
+   <property name="text">
+    <string>Capacitância -&gt; XC</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>Mod</tabstop>
+  <tabstop>Angle</tabstop>
+  <tabstop>Resp1</tabstop>
+  <tabstop>btnPolRect</tabstop>
+  <tabstop>real</tabstop>
+  <tabstop>img</tabstop>
+  <tabstop>Resp2</tabstop>
+  <tabstop>btnRectPol</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
