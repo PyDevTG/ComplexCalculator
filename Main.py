@@ -1,5 +1,4 @@
-import errno
-from msilib.schema import Error
+
 import qrcode as qr 
 import cmath
 import math
